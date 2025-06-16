@@ -1,0 +1,13 @@
+spring:
+  data:
+    couchbase:
+      connection-string: couchbase://localhost
+      username: admin
+      password: 123456
+      bucket-name: todo_bucket
+
+server:
+  port: 8080
+jwt:
+  secret: Nd3WJUZvnunQ5qjcIiyyo4zulv6LHJa7lyLkzLA9EWY=
+  expiration: 86400000

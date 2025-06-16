@@ -1,0 +1,14 @@
+# Java
+/target
+*.log
+
+# Node
+/frontend/node_modules
+/frontend/build
+
+# OS
+.DS_Store
+
+# IDE
+.idea
+*.iml
