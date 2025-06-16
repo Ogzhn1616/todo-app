@@ -17,22 +17,30 @@ This setup will automatically build and run the **frontend**, **backend**, and *
 
 - Docker and Docker Compose installed
 
-### Run
-
-To run this project via Docker Compose, please make sure to include the `couchbase/init.sh` script alongside the `docker-compose.yml` file, preserving the same folder structure:
+### Step 1: Clone this Repository
 
 ```bash
-your-folder/
+git clone https://github.com/oguzhanerten/todo-fullstack.git
+cd todo-fullstack
+```
+
+Make Sure the Folder Structure Looks Like This
+
+```bash
+todo-fullstack/
 ├── docker-compose.yml
 └── couchbase/
     └── init.sh
+```
+
+To run this project via Docker Compose, please make sure to include the `couchbase/init.sh` script alongside the `docker-compose.yml` file, preserving the same folder structure.
 
 Then simply run:
 
+```bash
 docker compose up --build
 ```
 
-````markdown
 **Note:** No need to build anything locally. All images are pulled from Docker Hub:
 
 - Backend: `oguzhanerten/todo-backend`
@@ -77,7 +85,6 @@ cd backend
 mvn clean install
 mvn spring-boot:run
 ```
-````
 
 #### Run Tests
 
@@ -111,6 +118,7 @@ npm start
 ├── frontend/              # React frontend
 ├── docker-compose.yml     # Docker configuration
 ├── README.md              # Project documentation
+├── couchbase/init.sh      # Couchbase DB init
 ```
 
 ---
