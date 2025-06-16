@@ -21,7 +21,7 @@ This setup will automatically build and run the **frontend**, **backend**, and *
 
 To run this project via Docker Compose, please make sure to include the `couchbase/init.sh` script alongside the `docker-compose.yml` file, preserving the same folder structure:
 
-````bash
+```bash
 your-folder/
 ├── docker-compose.yml
 └── couchbase/
@@ -29,9 +29,8 @@ your-folder/
 
 Then simply run:
 
-```bash
 docker compose up --build
-````
+```
 
 ````markdown
 **Note:** No need to build anything locally. All images are pulled from Docker Hub:
