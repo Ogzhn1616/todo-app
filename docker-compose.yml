@@ -11,7 +11,7 @@ services:
       COUCHBASE_ADMIN_PASSWORD: 123456
     volumes:
       - couchbase_data:/opt/couchbase/var
-      - ./couchbase/init/init.sh:/init.sh
+      - ./couchbase/init.sh:/init.sh
     command: ["bash", "/init.sh"]
     networks:
       - todo_net
@@ -22,7 +22,7 @@ services:
       retries: 10
 
   backend:
-    build: ./backend
+    image: oguzhanerten/todo-backend:latest
     ports:
       - "8080:8080"
     depends_on:
@@ -35,9 +35,7 @@ services:
     restart: always
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: oguzhanerten/todo-frontend:latest
     ports:
       - "3000:80"
     depends_on:
