@@ -2,6 +2,7 @@
 
 This is a fullstack To-Do application that supports user authentication and individual task management.  
 It includes:
+
 - Spring Boot Backend with JWT authentication and Couchbase support
 - React Frontend
 - Dockerized deployment option
@@ -13,23 +14,40 @@ It includes:
 This setup will automatically build and run the **frontend**, **backend**, and **Couchbase** together.
 
 ### Prerequisites
+
 - Docker and Docker Compose installed
 
 ### Run
 
+To run this project via Docker Compose, please make sure to include the `couchbase/init.sh` script alongside the `docker-compose.yml` file, preserving the same folder structure:
+
+````bash
+your-folder/
+├── docker-compose.yml
+└── couchbase/
+    └── init.sh
+
+Then simply run:
+
 ```bash
 docker compose up --build
-```
+````
+
+````markdown
+**Note:** No need to build anything locally. All images are pulled from Docker Hub:
+
+- Backend: `oguzhanerten/todo-backend`
+- Frontend: `oguzhanerten/todo-frontend`
 
 - Setup Time: ~1 minute with Docker.
 
-### To Access the App, visit; 
+### To Access the App, visit:
 
-- Frontend: http://localhost:3000
-- Swagger (Backend API Docs):  http://localhost:8080/swagger-ui/index.html
-- Couchbase Console: http://localhost:8091
-  - Username: `admin`
-  - Password: `123456`
+- **Frontend**: [http://localhost:3000](http://localhost:3000)
+- **Swagger (Backend API Docs)**: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+- **Couchbase Console**: [http://localhost:8091](http://localhost:8091)
+- Username: `admin`
+- Password: `123456`
 
 ---
 
@@ -38,19 +56,21 @@ docker compose up --build
 ### Backend Setup
 
 #### Prerequisites
+
 - Java 17 or higher
 - Maven
 - Couchbase Server running locally on `localhost:8091`, with:
--
-If you’re running the backend without Docker, please make sure:
-•	Couchbase server is running on localhost:8091
-•	A bucket named todo_bucket exists
-•	Admin credentials are:
-•	Username: admin
-•	Password: 123456
+- If you’re running the backend without Docker, please make sure:
+  • Couchbase server is running on localhost:8091
+  • A bucket named todo_bucket exists
+  • Admin credentials are:
+  • Username: admin
+  • Password: 123456
 
 Note: A bucket named todo_bucket will be automatically created only when using Docker via the init.sh script.
-  - 
+
+-
+
 #### Build and Run
 
 ```bash
@@ -58,6 +78,7 @@ cd backend
 mvn clean install
 mvn spring-boot:run
 ```
+````
 
 #### Run Tests
 
@@ -70,6 +91,7 @@ mvn test
 ### Frontend Setup
 
 #### Prerequisites
+
 - Node.js (version 18 or higher recommended)
 - npm
 
